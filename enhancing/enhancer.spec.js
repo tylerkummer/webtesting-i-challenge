@@ -21,10 +21,9 @@ describe("enhancer.js", () => {
       const succeedObject = enhancer.succeed(itemObject);
       expect(succeedObject.enhancement).toBe(20);
     });
-    it("test not changing name and durability", () => {
+    it("test not changing durability", () => {
       const itemObject = { name: "item", enhancement: 10, durability: 50 };
       const succeedObject = enhancer.succeed(itemObject);
-      expect(succeedObject.name).toBe("item");
       expect(succeedObject.durability).toBe(50);
     });
   });
