@@ -17,13 +17,15 @@ function fail(item) {
   const newItem = { ...item };
   if (newItem.enhancement < 15) {
     newItem.durability -= 5;
+  } else if (newItem.enhancement > 16) {
+    newItem.enhancement--;
   } else if (newItem.enhancement >= 15) {
     newItem.durability -= 10;
   }
 
-  if (newItem.enhancement > 16) {
-    newItem.enhancement--;
-  }
+  // if (newItem.enhancement > 16) {
+  //   newItem.enhancement--;
+  // }
   return newItem;
 }
 
