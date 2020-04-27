@@ -6,15 +6,33 @@ module.exports = {
 };
 
 function succeed(item) {
-  return { ...item };
+  const newItem = { ...item };
+  if (newItem.enhancement < 20) {
+    newItem.enhancement++;
+  }
+  return newItem;
 }
 
 function fail(item) {
-  return { ...item };
+  const newItem = { ...item };
+  if (newItem.enhancement < 15) {
+    newItem.durability -= 5;
+  } else if (newItem.enhancement > 16) {
+    newItem.enhancement--;
+  } else if (newItem.enhancement >= 15) {
+    newItem.durability -= 10;
+  }
+
+  // if (newItem.enhancement > 16) {
+  //   newItem.enhancement--;
+  // }
+  return newItem;
 }
 
 function repair(item) {
-  return { ...item };
+  const newItem = { ...item };
+  newItem.durability = 100;
+  return newItem;
 }
 
 function get(item) {
